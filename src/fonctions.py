@@ -11,13 +11,10 @@ import numpy as np
 # Parseur general
 
 def parserPDB(infile):
-    """ Cette fonction a pour but de parser un fichier de type pdb afin
-    d'en recuperer les informations sur les differents atomes qui composent
-    les acides amines.
-
-    Input : fichier pdb a parser.
-    Output : dictionnaire contenant les informations sur le fichier.
-
+    """
+        Parse a pdb file.
+        Input : pdb file
+        Output : dictionnary
     """
 
     # Test d'ouverture du fichier
@@ -93,15 +90,13 @@ def parserPDB(infile):
 # Parseur avec carbones alpha uniquement
 
 def parserPDB_CA(infile):
-    """ Cette fonction a pour but de parser un fichier de type pdb afin
-    d'en recuperer les informations sur les carbones alpha.
-
-    Input : fichier pdb a parser.
-    Output : dictionnaire contenant les informations sur les carbones alpha du fichier.
-
+    """
+        Parse a pdb file to get infos regarding alpha carbones
+        Input : pdb file
+        Output : dictionnary
     """
 
-    # Test d'ouverture du fichier
+    # file opening test
     try:
 		f = open(infile,'r')
     except:
@@ -112,7 +107,7 @@ def parserPDB_CA(infile):
     number_of_lines=len(lines)
 
 
-    # Test fichier vide
+    # empty file test
     if number_of_lines==0:
 		print "Erreur, le fichier est vide"
 		sys.exit(1)
